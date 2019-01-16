@@ -11,3 +11,15 @@ jak działa zapytanie dns:
 Zapytania DNS: 
 - Rekurencyjne – zmusza serwer do udzielenia zapytania. Najczęściej zapytania od resolwera (program potrafiący wysyłać zapytania do serwerów DNS) są rekurencyjne. Oznacza to, że odpowiedzialność za udzielenie odpowiedzi spada na zapytany serwer.
 - Iterecyjne – Wysyłane między serwerami DNS. Umożliwia serwerowi zwrócenie najlepszej posiadanej odpowiedzi (np. Nie wiem, ale pytaj serwer odpowiadający za domeny .pl pod tym adresem IP)
+
+
+- Rekord A – inaczej rekord IPv4(32 bity) lub rekord adresu. Odpowiada on za połączenie domeny z fizycznym adresem IP komputera używanego jako hosta usług w domenie, czyli adresem serwera docelowego. Dla jednej domeny może istnieć tylko jeden rekord (w przypadku subdomen może ich być więcej)
+- Rekord AAAA – inaczej rekord IPv6. Odpowiada za to samo co Rekord A z tym że stosuje bardziej nowoczesny protokół (IP wersja 6- 128 bitów). Powstał ze względu na wyczerpującą się ilość adresów IP w protokole IPv4. Najczęściej zapisywany jest w formie ośmiu 16-bitowych bloków. Aktualnie nie jest konieczne tworzenie tego rekordu, ale w przyszłości najprawdopodobniej wyprze IPv4.
+- Rekord MX – rekord wymiany poczty (Mail Exchange Record) odpowiada za przekierowanie poczty. Za jego pomocą możesz wskazać serwer odpowiedzialny za obsługę poczty w danej domenie.
+- Rekord NS – są to rekordy serwera nazw (Name Server Record). Przypisuje adres domeny do serwera nazw DNS. Często, gdy ktoś mówi o rekordach DNS ma na myśli rekordy NS.
+- Rekord CNAME – rekord nazwy kanonicznej (Canonical Name Record) ustanawia alias dla domeny, umożliwiając skierowanie domeny/subdomeny na inną nazwę domenową
+- Rekord PTR, czyli rekord wskaźnika (pointer record). Mapuje adres IPv4 i IPv6 dla nazwy kanonicznej. Używany do obsługi tzw. Reverse DNS, czyli tłumaczenia adresów IP na adresy zrozumiałe dla nas, czyli np. www.kylos.pl
+- Rekord TXT - pozwala na dołączenie dowolnego tekstu do strefy DNS np. informacje dotyczące SPF (Sender Policy Framework) są rekordem TXT
+- Rekord SRV – inaczej rekord usługi (Service Record) pozwala na wprowadzenie większej ilości informacji o usłudze, niż tylko adres IP. Możliwe jest wskazanie np. numeru portu, na którym pracuje dana usługa lub priorytet oraz wagę dla danego wpisu
+- Rekord DMARC - pozwala właścicielowi domeny, zlecanie odbierającym serwerom pocztowym zastosowanie odpowiedniej polityki do wiadomości, które nie przejdą testu uwierzytelniania – odrzucenie lub poddanie kwarantannie. Takie działania powinny sprawić, że tak zwany scam podszywający się pod takich nadawców, jak PayPal, nie będzie pojawiał się w naszych skrzynkach pocztowych.
+-  Rekord CAA - rekord pozwalający na określenie, który Urząd lub Urzędy Certyfikacji (CAs) mogą wystawiać certyfikaty SSL dla danej domeny.
