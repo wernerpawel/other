@@ -1,7 +1,7 @@
 jak działa zapytanie dns: 
 
 1. Wpisujesz adres www w przeglądarce
-2. Przeglądarka odpytuje najblizszy serwer autorytarny (np. twój ISP)
+2. Przeglądarka odpytuje najblizszy serwer DNS (np. twój ISP)
 3. Z serwera autorytarnego idzie zapytanie do tzw ROOT-Servera
 4. Root-server przeszukuje swoje zasoby, i wysyła zapytanie do konkretnego providera (np. dla domen pl)
 5. Po otrymaniu tej informacji, dns providera łączy się ze wskazanym serwerem dns odpowiedzialnym za domeny .pl
