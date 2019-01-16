@@ -1,0 +1,13 @@
+jak działa zapytanie dns: 
+
+1. Wpisujesz adres www w przeglądarce
+2. Przeglądarka odpytuje najblizszy serwer autorytarny (np. twój ISP)
+3. Z serwera autorytarnego idzie zapytanie do tzw ROOT-Servera
+4. Root-server przeszukuje swoje zasoby, i wysyła zapytanie do konkretnego providera (np. dla domen pl)
+5. Po otrymaniu tej informacji, dns providera łączy się ze wskazanym serwerem dns odpowiedzialnym za domeny .pl
+6. Nie posiada on tej strony na serwerze, ale wie, gdzie się znajduje - podaje wiec adres ip serwera na ktorym sie znajduje się strona www
+7. Po otrzymaniu tej informacji, serwer dns komunikuje się ze wskazanym adresem IP i sprawdza, czy strona faktycznie sie tam znajduje - jeśli tak, przesyła informację zwrotna
+
+Zapytania DNS: 
+- Rekurencyjne – zmusza serwer do udzielenia zapytania. Najczęściej zapytania od resolwera (program potrafiący wysyłać zapytania do serwerów DNS) są rekurencyjne. Oznacza to, że odpowiedzialność za udzielenie odpowiedzi spada na zapytany serwer.
+- Iterecyjne – Wysyłane między serwerami DNS. Umożliwia serwerowi zwrócenie najlepszej posiadanej odpowiedzi (np. Nie wiem, ale pytaj serwer odpowiadający za domeny .pl pod tym adresem IP)
